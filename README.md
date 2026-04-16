@@ -1,13 +1,5 @@
 # contx
 
- ░▒▓██▓▒░    ░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓███████▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░   ░▒▓██▓▒░
- ░▒▓██▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░   ░▒▓██▓▒░
- ░▒▓██▓▒░   ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░   ░▒▓██▓▒░
- ░▒▓██▓▒░   ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░    ░▒▓██████▓▒░    ░▒▓██▓▒░
- ░▒▓██▓▒░   ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░   ░▒▓██▓▒░
- ░▒▓██▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░   ░▒▓██▓▒░
- ░▒▓██▓▒░    ░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░   ░▒▓██▓▒░
-
 let's be real: trying to understand a massive codebase is a certified vibe kill. instead of raw-dogging thousands of lines of code, use `contx` to turn that spaghetti into a structured knowledge vault that plays perfectly with tools like obsidian.
 
 we use tree-sitter AST parsing (big brain energy) to actually understand what your code is doing, not just grep for strings like it's 1995.
