@@ -1,10 +1,12 @@
 # contx
 
-      ○
-     / \
-    ○---○
-     \ /
-      ○
+ ░▒▓██▓▒░    ░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓███████▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░   ░▒▓██▓▒░
+ ░▒▓██▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░   ░▒▓██▓▒░
+ ░▒▓██▓▒░   ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░   ░▒▓██▓▒░
+ ░▒▓██▓▒░   ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░    ░▒▓██████▓▒░    ░▒▓██▓▒░
+ ░▒▓██▓▒░   ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░   ░▒▓██▓▒░
+ ░▒▓██▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░   ░▒▓██▓▒░
+ ░▒▓██▓▒░    ░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░   ░▒▓██▓▒░
 
 let's be real: trying to understand a massive codebase is a certified vibe kill. instead of raw-dogging thousands of lines of code, use `contx` to turn that spaghetti into a structured knowledge vault that plays perfectly with tools like obsidian.
 
@@ -30,6 +32,8 @@ you can install this globally on any OS.
 ### 2. global install
 run this in the `context` directory:
 ```bash
+git clone https://github.com/yugaaank/contx.git
+cd contx
 pipx install .
 ```
 
@@ -40,7 +44,8 @@ once installed, just use the `contx` command. it's that simple.
 ### create an obsidian-ready vault (markdown)
 perfect for when you actually want to read stuff or see that sweet obsidian graph.
 ```bash
-contx /path/to/project --out ./my-obsidian-vault
+contx /path/to/project #The default folder for output is ~/contx 
+contx /path/to/project --out ./my-obsidian-vault #This is for if you need a different output vault
 ```
 
 ### create a JSON index
@@ -62,4 +67,4 @@ contx --query search "authentication" --index ./code-index.json
 ```
 
 ## the boring bits
-by default, we save your context to `~/contx/<project-name>/`. keep your obsidian files organized.
+by default, we save your context to `~/pipeline-context/<project-name>/`. keep your obsidian files organized.
