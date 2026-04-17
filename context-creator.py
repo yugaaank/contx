@@ -1468,13 +1468,13 @@ Examples:
         print(f"Error: Root path is not a directory: {root}")
         sys.exit(1)
 
-    # Default output: ~/pipeline-context/<project-name>/
+    # Default output: ~/contx/<project-name>/
     out_str = args.out if args.out else None
     if out_str:
         out = Path(out_str).expanduser().resolve()
     else:
         project_name = sanitize_name(root.name) or "unnamed_project"
-        out = Path.home() / "pipeline-context" / project_name
+        out = Path.home() / "contx" / project_name
     out = out.resolve()
 
     target_languages = None

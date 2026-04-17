@@ -59,4 +59,4 @@ contx --query search "authentication" --index ./code-index.json
 ```
 
 ## the boring bits
-by default, we save your context to `~/pipeline-context/<project-name>/`. keep your obsidian files organized.
+by default, we save your context to `~/contx/<project-name>/`. keep your obsidian files organized.
