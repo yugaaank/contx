@@ -19,14 +19,14 @@ you can install this globally on any OS.
 
 ### 1. prerequisites
 - python 3.8+ (don't be that person on 2.7)
-- `pipx` installed
+- `pip` installed
 
 ### 2. global install
 run this in the `context` directory:
 ```bash
 git clone https://github.com/yugaaank/contx.git
 cd contx
-pipx install .
+pip install .
 ```
 
 ## how to use
