@@ -3,6 +3,7 @@ import sys
 import argparse
 import re
 import json
+import ctypes
 from pathlib import Path
 from tree_sitter import Language, Parser
 
@@ -15,7 +16,7 @@ except ImportError:
 
 # Language pack support
 try:
-    from tree_sitter_language_pack import get_language, get_parser, available_languages, download_all
+    from tree_sitter_language_pack import get_language, get_parser, available_languages, download_all, cache_dir
     HAS_LANGUAGE_PACK = True
 except ImportError:
     HAS_LANGUAGE_PACK = False
@@ -144,10 +145,32 @@ def build_parsers(target_languages=None, project_root=None):
 
     print(f"Loading {len(languages_to_load)} language parser(s)...")
     loaded = 0
+    lib_dir = Path(cache_dir())
+
     for lang_name in sorted(languages_to_load):
         try:
-            parser = get_parser(lang_name)
-            language = get_language(lang_name)
+            # Manually load language from the pack's compiled libraries to ensure
+            # compatibility with the tree-sitter Python package (0.22.0+)
+            lib_name = f"libtree_sitter_{lang_name}.so"
+            if sys.platform == "darwin":
+                lib_name = f"libtree_sitter_{lang_name}.dylib"
+            elif sys.platform == "win32":
+                lib_name = f"tree_sitter_{lang_name}.dll"
+
+            lib_path = lib_dir / lib_name
+            if not lib_path.exists():
+                # Fallback to get_parser/get_language if manual load fails
+                parser = get_parser(lang_name)
+                language = get_language(lang_name)
+            else:
+                lib = ctypes.cdll.LoadLibrary(str(lib_path))
+                symbol_name = f"tree_sitter_{lang_name}"
+                func = getattr(lib, symbol_name)
+                func.restype = ctypes.c_void_p
+
+                language = Language(func())
+                parser = Parser(language)
+
             PARSERS[lang_name] = parser
             LANGUAGES[lang_name] = language
             loaded += 1
