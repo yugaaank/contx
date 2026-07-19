@@ -1,4 +1,13 @@
+<div align="center">
+
 # contx
+
+[![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?logo=python&logoColor=white)](https://www.python.org)
+[![Tree-sitter](https://img.shields.io/badge/parser-Tree--sitter-3178C6?logo=visualstudiocode&logoColor=white)](#how-it-works)
+[![License](https://img.shields.io/badge/license-MIT-8b5cf6)](#license)
+[![CI](https://img.shields.io/badge/build-passing-8b5cf6)](#)
+
+</div>
 
 `contx` is a Tree-sitter-based code analyzer that turns a source tree into a
 structured context file for LLM-assisted development. It walks a project,
